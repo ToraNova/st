@@ -256,6 +256,7 @@ static char *copyoutput[] = { "/bin/sh", "-c", "st-copyout", "externalpipe", NUL
  * can't use ctrl-v since that is required on nvim
  *  { MODKEY,		XK_c,           clipcopy,       {.i =  0} },
  *  { MODKEY, 		XK_v,           clippaste,      {.i =  0} },
+ *  control + \ will paste
 */
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
@@ -267,7 +268,7 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
 	{ MODKEY,               XK_Home,        zoomreset,      {.f =  0} },
 	{ ShiftMask,            XK_Insert,      clippaste,      {.i =  0} },
-	{ ControlMask,          XK_backslash,   clippaste,      {.i =  0} }, //control + \ will paste
+	{ ControlMask,          XK_backslash,   clippaste,      {.i =  0} },
 	{ MODKEY,               XK_c,           clipcopy,       {.i =  0} },
 	{ MODKEY,		XK_v,           clippaste,      {.i =  0} },
 	{ XK_ANY_MOD,		Button2,	selpaste,	{.i =  0} },
