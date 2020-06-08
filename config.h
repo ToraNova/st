@@ -223,10 +223,15 @@ static char *copyurlcmd[] = { "/bin/sh", "-c",
 
 static char *copyoutput[] = { "/bin/sh", "-c", "st-copyout", "externalpipe", NULL };
 
-//Edit 2019 June ToraNova
 /*
-   Changed clipcopy  to ctrl+shift+c
-   and 	   clippaste to ctrl+shift+v
+ * Edit 2019 June ToraNova
+ * Changed clipcopy  to ctrl+shift+c and clippaste to ctrl+shift+v
+ *  { CTSHIFT,		XK_C,           clipcopy,       {.i =  0} },
+ *  { CTSHIFT, 		XK_V,           clippaste,      {.i =  0} },
+ * Edit 2020 June ToraNova
+ * decided that ALT+CV is the way to go.
+ *  { MODKEY,		XK_C,           clipcopy,       {.i =  0} },
+ *  { MODKEY, 		XK_V,           clippaste,      {.i =  0} },
 */
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
@@ -238,8 +243,8 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
 	{ MODKEY,               XK_Home,        zoomreset,      {.f =  0} },
 	{ ShiftMask,            XK_Insert,      clippaste,      {.i =  0} },
-	{ CTSHIFT,		XK_C,           clipcopy,       {.i =  0} },
-	{ CTSHIFT, 		XK_V,           clippaste,      {.i =  0} },
+	{ MODKEY,		XK_C,           clipcopy,       {.i =  0} },
+	{ MODKEY, 		XK_V,           clippaste,      {.i =  0} },
 	{ MODKEY,               XK_p,           selpaste,       {.i =  0} },
 	{ MODKEY,               XK_Num_Lock,    numlock,        {.i =  0} },
 	{ MODKEY,               XK_Control_L,   iso14755,       {.i =  0} },
